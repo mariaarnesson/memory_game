@@ -48,7 +48,7 @@ div {
 
 @media (orientation: portrait) {
     div {
-        height: 20px;
+        height: 16.66vh;
         flex-basis: 30%;
     }
 }
@@ -76,8 +76,8 @@ div {
 .light-green {
     background-color: lightgreen;
 }
-.cadateblue {
-    background-color:cadetblue;
+.cadetblue {
+    background-color: cadetblue;
 }
 .violet {
     background-color: violet;
@@ -88,4 +88,50 @@ div {
 }
 .off {
     background-color: #eee;
+}
+
+/* For medium screen sizes from 950px wide and down */
+@media only screen and (max-width: 950px) {
+    #game {
+        margin-left: 0px;
+    }
+}
+
+/* For small screen sizes below 500px width */
+@media (max-width: 500px)  {
+    #game {
+        margin-left: 0px;
+       width: 400px;
+       height: 10px;
+       margin-top: 10px;
+
+    }
+    h1 {
+        letter-spacing: 1px;
+    }
+    #instruction {
+        height: 75px;
+        width: 300px;
+        overflow: scroll;
+        margin-left: 0px;
+    }
+}
+/* For small screen sizes below 500px width */
+@media (max-width: 500px)  {
+    #game {
+        margin-left: 50px;
+       width: 200px;
+       height: 100px;
+       margin-top: 10px;
+
+    }
+    h1 {
+        letter-spacing: 1px;
+    }
+    #instruction {
+        height: 75px;
+        width: 300px;
+        overflow: scroll;
+        margin-left: 0px;
+    }
 }

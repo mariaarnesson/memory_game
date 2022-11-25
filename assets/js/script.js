@@ -1,4 +1,4 @@
-var cardColors = ["yellow", "yellow", "green", "green", "red", "red", "blue", "blue", "brown", "brown", "grey", "grey", "light-green", "light-green", "cadetblue", "cadetblue", "violet", "violet" ];
+const cardColors = ["yellow", "yellow", "green", "green", "red", "red", "blue", "blue", "brown", "brown", "grey", "grey", "light-green", "light-green", "cadetblue", "cadetblue", "violet", "violet" ];
 
 let cards = document.querySelectorAll("div");
 cards = [...cards];
@@ -8,19 +8,19 @@ const startTime = new Date().getTime();
 let activeCard = "";
 const activeCards = [];
 
-const gameLength = cards.length /2;
+const gameLength = cards.length /2; //9
 
 /*Result information - how many pairs have been made*/
 let gameResult = 0;
 
-/*After clicking on a crad*/
+/*After clicking on a card*/
 const clickCard = function() {
-    activeCard = console.log(Event.target);
+    activeCard = this;
 
     if (activeCard == activeCards[0]) return;
 
     /*Hide the card that was clicked*/
-    activaCard.classList.remove("hidden");
+    activeCard.classList.remove("hidden");
 
     if (activeCards.length === 0) {
         console.log("1 element");
@@ -56,7 +56,7 @@ const clickCard = function() {
             /*Reset*/
             activeCard = ""; /* active card is blank */
             activeCards.length = 0;
-            cards.forEach(card => card.aaEventListener("click", clickCard))
+            cards.forEach(card => card.addEventListener("click", clickCard))
 
         }, 500)
     }
@@ -66,7 +66,7 @@ const clickCard = function() {
 const init = function () {
     cards.forEach(card => {
 
-        const position = Math.floor(Math.random() * cardColors.length);
+        const position = Math.floor(Math.random() * cardColors.length); //1
 
         card.classList.add(cardColors[position]);
         cardColors.splice(position, 1);
@@ -80,6 +80,6 @@ const init = function () {
     }, 200)
 };
 
-
+init();
 
 
