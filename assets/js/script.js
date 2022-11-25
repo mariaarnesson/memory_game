@@ -29,6 +29,24 @@ const clickCard = function() {
     }else {
         console.log("2 element");
 
+        Array.prototype.shuffled = function() {
+            return this.map(function(n){ return [Math.random(), n] })
+                       .sort().map(function(n){ return n[1] });
+          }
+          function flipCard({target: clickedCard}) {
+            if(cardOne !== clickedCard && !disableDeck) {
+                clickedCard.classList.add("flip");
+                if(!cardOne) {
+                    return cardOne = clickedCard;
+                }
+                cardTwo = clickedCard;
+                disableDeck = true;
+                let cardOneImg = cardOne.querySelector(".back-view img").src,
+                cardTwoImg = cardTwo.querySelector(".back-view img").src;
+                matchCards(cardOneImg, cardTwoImg);
+            }
+        }
+
         /*romove the possibility of clicking*/
         cards.forEach(card => card.removeEventListener("click", clickCard))
         activeCards[1] = activeCard;
@@ -81,5 +99,7 @@ const init = function () {
 };
 
 init();
+
+
 
 
