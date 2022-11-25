@@ -25,3 +25,6 @@ Test your memory with this memory game. This is a very easy game for both adults
 + The photo used on the background is from (https://www.pexels.com/sv-se/foto/konst-kronblad-lov-vit-2512387/)
 
 +  This tutorial was followed and some JavaScript code was taken and adapted to my game.(https://www.youtube.com/watch?v=dOxrZ3F_gu8)
+
++ I was inspired by (https://www.codingnepalweb.com/build-memory-card-game-html-javascript/)
+
