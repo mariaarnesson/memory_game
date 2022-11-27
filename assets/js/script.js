@@ -37,7 +37,7 @@ const clickCard = function() {
           }
           function flipCard({target: clickedCard}) {
             if(cardOne !== clickedCard && !disableDeck) {
-                clickedCard.classList.add("flip");
+                clickedCard.classList.add("flipCard");
                 if(!cardOne) {
                     return cardOne = clickedCard;
                 }
@@ -83,7 +83,7 @@ const clickCard = function() {
 
 };
 /* Function instalized after start */
-const init = function () {
+const shuffleCard = function () {
     cards.forEach(card => {
 
         const position = Math.floor(Math.random() * cardColors.length); //1
@@ -100,7 +100,7 @@ const init = function () {
     }, 200)
 };
 
-init();
+shuffleCard();
 
 
 

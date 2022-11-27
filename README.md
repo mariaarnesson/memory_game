@@ -26,5 +26,5 @@ Test your memory with this memory game. This is a very easy game for both adults
 
 +  This tutorial was followed and some JavaScript code was taken and adapted to my game.(https://www.youtube.com/watch?v=dOxrZ3F_gu8)
 
-+ I was inspired by (https://www.codingnepalweb.com/build-memory-card-game-html-javascript/)
++ I was inspired by (https://www.codingnepalweb.com/build-memory-card-game-html-javascript/) 
 
