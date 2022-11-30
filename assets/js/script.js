@@ -1,4 +1,4 @@
-const cardColors = ["yellow", "yellow", "green", "green", "red", "red", "blue", "blue", "brown", "brown", "grey", "grey", "light-green", "light-green", "cadetblue", "cadetblue", "violet", "violet" ];
+var cardColors = ['yellow', 'yellow', 'green', 'green', 'red', 'red', 'blue', 'blue', 'brown', 'brown', 'grey', 'grey', 'light-green', 'light-green', 'cadetblue', 'cadetblue', 'violet', 'violet' ];
 
 
 
@@ -31,23 +31,19 @@ const clickCard = function() {
     }else {
         console.log("2 element");
 
-        Array.prototype.shuffled = function() {
-            return this.map(function(n){ return [Math.random(), n] })
-                       .sort().map(function(n){ return n[1] });
-          }
-          function flipCard({target: clickedCard}) {
-            if(cardOne !== clickedCard && !disableDeck) {
-                clickedCard.classList.add("flipCard");
-                if(!cardOne) {
-                    return cardOne = clickedCard;
-                }
-                cardTwo = clickedCard;
-                disableDeck = true;
-                let cardOneImg = cardOne.querySelector(".back-view img").src,
-                cardTwoImg = cardTwo.querySelector(".back-view img").src;
-                matchCards(cardOneImg, cardTwoImg);
+        function shuffle(array) {
+            var currentIndex = array.length, temporaryValue, randomIndex;
+              
+            while (0 !== currentIndex) {
+              randomIndex = Math.floor(Math.random() * currentIndex);
+              currentIndex -= 1;
+              temporaryValue = array[currentIndex];
+              array[currentIndex] = array[randomIndex];
+              array[randomIndex] = temporaryValue;
             }
-        }
+          
+            return array;
+          }
 
         /*romove the possibility of clicking*/
         cards.forEach(card => card.removeEventListener("click", clickCard))
@@ -91,13 +87,13 @@ const shuffleCard = function () {
         card.classList.add(cardColors[position]);
         cardColors.splice(position, 1);
     })
-    /* 2 seconds hidden */
+    /* 5 seconds hidden */
     setTimeout(function () {
         cards.forEach(card => {
             card.classList.add("hidden")
             card.addEventListener("click", clickCard)
         })
-    }, 200)
+    }, 500)
 };
 
 shuffleCard();
